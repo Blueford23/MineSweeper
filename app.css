@@ -5,3 +5,17 @@
   background-color: grey;
   text-align: center;
 }
+.main-container {
+  background-color: lightcoral;
+  padding: 5px;
+  border: solid;
+  border-color: black;
+  border-width: 5px;
+  width: fit-content;
+}
+.scoreBoard {
+  align-self: stretch;
+}
+.scoreBoard td {
+  padding-left: 10px;
+}
