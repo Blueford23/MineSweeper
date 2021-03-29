@@ -45,7 +45,7 @@ let gScore = 0;
 function init(levelIndex = 0) {
   gGame.levelSelectedIndex = levelIndex;
   gGame.isOn = false;
-  gGame.minesMarked = score = gGame.secsPassed = gGame.shownCount = gGame.minesOnBoard = 0;
+  gGame.minesMarked = gGame.score = gGame.secsPassed = gGame.shownCount = gGame.minesOnBoard = 0;
   gBoard = buildBoard();
   renderBoard(gBoard);
 }
