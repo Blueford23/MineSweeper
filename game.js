@@ -132,6 +132,20 @@ function updateScore(diff = 1) {
     elScore.innerText = gGame.score;
   }
 }
+
+function renderlevels(levels) {
+  let strHTML='';
+    for (var j = 0; j < levels.length; j++) {
+      strHTML+= '<td>\n'
+      strHTML += '<button ' +'onClick="resetBtnHit('+j+')" >' 
+      var cell = levels[j].title + ' (' + (levels[j].size**2)+')';
+      strHTML +=  cell + '</button> \n';
+      strHTML += '</td> \n'
+    }
+  var elContainer = document.querySelector('.levelContainer');
+  elContainer.innerHTML = strHTML;
+}
+
 //#endregion
 
 //#region Event handlers
@@ -169,8 +183,8 @@ function cellMarked(elCell, i, j) {
   return false;
 }
 
-function resetBtnHit() {
-  init();
+function resetBtnHit(lvlIndex = 0) {
+  init(lvlIndex);
 }
 //#endregion
 
@@ -245,4 +259,11 @@ function getIsMine() {
   return Math.random() < odds ? true : false;
 }
 
-init();
+document.addEventListener("DOMContentLoaded", function() {
+  alert("Am I working right?");
+  init(1);
+renderlevels(gGame.levels);
+});
+
+
+
